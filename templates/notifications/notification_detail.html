@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Detail</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body id="notification-detail-page">
+    <h1 class="page-title">Notification Detail</h1>
+    <div class="notification-detail">
+        <p><strong>Type:</strong> {{ notification.notification_type }}</p>
+        <p><strong>Message:</strong> {{ notification.message }}</p>
+        <p><strong>Created at:</strong> {{ notification.created_at }}</p>
+        {% if not notification.is_read %}
+        <p class="status"><em>Status: Unread</em></p>
+        {% else %}
+        <p class="status"><em>Status: Read</em></p>
+        {% endif %}
+        <a href="{% url 'notifications:notification_list' %}" class="back-link">Back to Notifications</a>
+    </div>
+</body>
+
+</html>

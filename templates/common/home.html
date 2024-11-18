@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Utility Home</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="header-title">Gas Utility Company</h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{% url 'common:home' %}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'common:login' %}" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{% url 'common:register' %}" class="nav-link">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to the Gas Utility Service</h2>
+            <p class="hero-description">Your one-stop solution for managing all gas-related services. Fast, easy, and
+                efficient!</p>
+            <a href="{% url 'common:register' %}" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-text">&copy; 2024 Gas Utility Company | All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

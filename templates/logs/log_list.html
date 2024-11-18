@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body class="log-list-body">
+    <h1 class="page-title">Logs</h1>
+    <ul id="log-list" class="log-items">
+        {% for log in logs %}
+        <li class="log-item">
+            <a href="{% url 'logs:log_detail' log.id %}" class="log-link">
+                {{ log.level }}: {{ log.message }} <small>({{ log.created_at }})</small>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

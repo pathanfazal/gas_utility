@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Log</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body class="generate-log-body">
+    <h1 class="page-title">Generate Log</h1>
+    <form method="post" class="generate-log-form">
+        {% csrf_token %}
+        <button type="submit" class="form-button">Generate Log</button>
+    </form>
+    <a href="{% url 'logs:log_list' %}" class="back-link">Back to Logs</a>
+</body>
+
+</html>

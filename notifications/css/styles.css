@@ -1,0 +1,80 @@
+/* Basic Styles for Notifications Pages */
+
+/* Resetting some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Notification List Styles */
+#notification-list {
+    margin-top: 40px;
+}
+
+.notification-items {
+    margin-top: 20px;
+}
+
+.notification-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.notification-item.unread {
+    background-color: #f7f7f7;
+}
+
+.notification-item small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Notification Detail Styles */
+#notification-detail {
+    margin-top: 30px;
+}
+
+.notification-details {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}

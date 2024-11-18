@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+h1.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d3e50;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Button Styles */
+.form-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff;
+}
+
+.back-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Log List */
+#log-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.log-items .log-item {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.log-items .log-link {
+    color: #2d3e50;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.log-items .log-link small {
+    display: block;
+    font-size: 12px;
+    color: #777;
+}
+
+.log-items .log-link:hover {
+    color: #f39c12;
+}
+
+/* Log Detail */
+.log-details {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.log-detail-item {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.log-detail-item strong {
+    color: #2d3e50;
+}

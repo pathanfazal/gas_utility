@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body>
+    <section id="report-list-page">
+        <h1 class="page-title">Reports</h1>
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr class="report-item {{ 'generated' if report.is_generated else 'pending' }}">
+                    <td>{{ report.name }}</td>
+                    <td>{{ report.description }}</td>
+                    <td>{{ report.report_type }}</td>
+                    <td>{{ "Generated" if report.is_generated else "Pending" }}</td>
+                    <td>
+                        {% if report.is_generated %}
+                        <a href="{% url 'reports:download_report' report.id %}" class="download-link">Download</a>
+                        {% else %}
+                        <span class="processing-status">Processing...</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'reports:generate_report' %}" class="generate-report-link">Generate New Report</a>
+    </section>
+</body>
+
+</html>

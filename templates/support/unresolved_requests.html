@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unresolved Requests</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body>
+    <section id="unresolved-requests-page">
+        <h1 class="page-title">Unresolved Service Requests</h1>
+        <table id="unresolved-requests-table" class="requests-table">
+            <thead>
+                <tr>
+                    <th>Request Type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in unresolved_requests %}
+                <tr class="request-item">
+                    <td>{{ request.request_type }}</td>
+                    <td>{{ request.status }}</td>
+                    <td class="actions">
+                        <a href="{% url 'support:manage_request' request.id %}" class="action-link">Manage</a>
+                        {% if request.status != 'Resolved' %}
+                        <a href="{% url 'support:resolve_request' request.id %}" class="action-link">Resolve</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

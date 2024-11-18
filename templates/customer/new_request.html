@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Service Request</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body class="new-request-body">
+    <h1 class="new-request-title">Create New Service Request</h1>
+    <form method="POST" class="new-request-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="request_type" class="form-label">Request Type</label>
+            <select id="request_type" name="request_type" class="form-select">
+                <option value="Gas Leakage">Gas Leakage</option>
+                <option value="Meter Issue">Meter Issue</option>
+                <!-- Add more request types as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="description" class="form-textarea" required></textarea>
+        </div>
+        <button type="submit" class="form-button">Submit Request</button>
+    </form>
+</body>
+
+</html>

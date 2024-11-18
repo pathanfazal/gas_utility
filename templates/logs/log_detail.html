@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Detail</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body class="log-detail-body">
+    <h1 class="page-title">Log Detail</h1>
+    <div class="log-details">
+        <p class="log-detail-item"><strong>Level:</strong> {{ log.level }}</p>
+        <p class="log-detail-item"><strong>Message:</strong> {{ log.message }}</p>
+        <p class="log-detail-item"><strong>Created at:</strong> {{ log.created_at }}</p>
+    </div>
+    <a href="{% url 'logs:log_list' %}" class="back-link">Back to Logs</a>
+</body>
+
+</html>

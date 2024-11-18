@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body class="dashboard-body">
+    <h1 class="dashboard-title">Welcome to your Dashboard</h1>
+    <nav class="dashboard-nav">
+        <ul class="dashboard-nav-list">
+            <li class="dashboard-nav-item"><a href="{% url 'customer:new_request' %}" class="dashboard-nav-link">Create
+                    New Request</a></li>
+            <li class="dashboard-nav-item"><a href="{% url 'customer:my_requests' %}" class="dashboard-nav-link">View My
+                    Requests</a></li>
+            <li class="dashboard-nav-item"><a href="{% url 'customer:reports' %}" class="dashboard-nav-link">View
+                    Reports</a></li>
+            <li class="dashboard-nav-item"><a href="{% url 'common:logout' %}" class="dashboard-nav-link">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

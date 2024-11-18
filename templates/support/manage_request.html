@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Request</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body>
+    <section id="manage-request-page">
+        <h1 class="page-title">Manage Service Request</h1>
+        <div class="request-details">
+            <p><strong>Request Type:</strong> {{ request.request_type }}</p>
+            <p><strong>Status:</strong> {{ request.status }}</p>
+            <p><strong>Description:</strong> {{ request.description }}</p>
+        </div>
+
+        <h2 class="section-title">Update Status</h2>
+        <form method="post" class="status-update-form">
+            {% csrf_token %}
+            <label for="status" class="form-label">Status:</label>
+            <select id="status" name="status" class="form-select">
+                <option value="Pending" {% if request.status=="Pending" %}selected{% endif %}>Pending</option>
+                <option value="In Progress" {% if request.status=="In Progress" %}selected{% endif %}>In Progress
+                </option>
+                <option value="Resolved" {% if request.status=="Resolved" %}selected{% endif %}>Resolved</option>
+            </select>
+
+            <h3 class="section-title">Resolution Notes</h3>
+            <textarea name="resolution_notes" id="resolution_notes" rows="4" cols="50"
+                class="form-textarea">{{ request.resolution_notes }}</textarea>
+
+            <button type="submit" class="submit-button">Update Request</button>
+        </form>
+    </section>
+</body>
+
+</html>

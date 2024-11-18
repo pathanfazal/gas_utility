@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Service Requests</title>
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body class="my-requests-body">
+    <h1 class="my-requests-title">My Service Requests</h1>
+    <table class="my-requests-table">
+        <thead>
+            <tr>
+                <th class="table-header">Request Type</th>
+                <th class="table-header">Status</th>
+                <th class="table-header">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+            <tr class="table-row">
+                <td class="table-data">{{ request.request_type }}</td>
+                <td class="table-data">{{ request.status }}</td>
+                <td class="table-data"><a href="{% url 'customer:request_detail' request.id %}" class="table-link">View
+                        Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

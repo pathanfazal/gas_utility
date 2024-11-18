@@ -1,0 +1,117 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 22px;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Table Styles */
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.requests-table th,
+.requests-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.requests-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.request-item {
+    transition: background-color 0.3s ease;
+}
+
+.request-item:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.action-link:hover {
+    color: #0056b3;
+}
+
+/* Manage Request Page */
+#manage-request-page .request-details {
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.status-update-form {
+    margin-top: 20px;
+}
+
+.form-label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .requests-table {
+        font-size: 14px;
+    }
+
+    .form-textarea {
+        width: 100%;
+    }
+}
